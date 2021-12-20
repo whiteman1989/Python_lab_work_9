@@ -12,12 +12,14 @@ canvas = Canvas(tk, width=500, height=400, highlightthickness=0)
 canvas.pack()
 tk.update()
 score = Score(canvas, 'green')
-paddle = Paddle(canvas, 'White')
-ball = Ball(canvas, paddle, score, 'red')
+paddle = Paddle(canvas, 'brown')
+ball = Ball(canvas, paddle, score, 'blue')
+ball2 = Ball(canvas, paddle, score, 'red')
 
 while not ball.hit_bottom:
     if paddle.started == True:
         ball.draw()
+        ball2.draw()
         paddle.draw()
     tk.update_idletasks()
     tk.update()
